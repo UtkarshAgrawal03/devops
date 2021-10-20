@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Dashboard</title>
+</head>
+<body>
+<h1>User DASHBOARD</h1>
+<h3>Welcome <span th:text="${username}"></span> to Sporty.com ...EXPLORE</h3>
+<h2><a th:href="@{/user/products}">Click HERE to see All products</a></h2><br><br>
+<h2><a th:href="@{/user/purchase}">Click HERE to Purchase product</a></h2><br><br>
+<h2><a th:href="@{/logout}">Click HERE to Logout</a></h2><br><br>
+
+
+
+</body>
+</html>

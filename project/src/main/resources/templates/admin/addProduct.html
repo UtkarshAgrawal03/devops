@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>signup page</title>
+</head>
+<body>
+<h1>HELLO ADMIN HERE YOU CAN ADD YOUR PRODUCT</h1>
+<form action="" th:action="@{/admin/addProduct}" th:object="${product}" method="post">
+<label for="name">Enter product Name</label><br>
+<input type="text" name="name" th:value="${product.name}" ><br>
+<label for="category">Enter product Category</label><br>
+<input type="text" name="category" th:value="${product.category}" ><br>
+<label for="size">Enter product Size</label><br>
+<input type="number" name="size" th:value="${product.size}" ><br>
+<label for="quantity">Enter product Quantity</label><br>
+<input type="number" name="quantity" th:value="${product.quantity}" ><br><br>
+
+<button type="submit" >Add Product</button>
+
+
+
+
+</form>
+
+</body>
+</html>

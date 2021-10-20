@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Purchase Page</title>
+</head>
+<body>
+<h1>Purchase Page</h1>
+<h3>Welcome <span th:text="${username}"></span> to purchase page</h3>
+<form action="" th:action="@{/user/purchased}" method="post">
+<label>Enter Product Id to be purchased</label><br>
+<input type="number" name="pid"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>

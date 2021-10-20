@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Password change page</title>
+</head>
+<body>
+<h1>Here you can change your password</h1>
+<form action="" th:action="@{/admin/Pass}" method="post">
+<label>Enter new Password Here</label><br>
+<input type="password" name="pass"><br>
+<input type="submit" value="ChangePassword">
+</form>
+</body>
+</html>

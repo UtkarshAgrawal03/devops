@@ -1,22 +1,37 @@
 package com.simplilearn.project.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class user {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int uid;
-	private String uname;
-	private String umail;
-	private long contact;
+	private String username;
+	private String password;
 	
-	public user(int uid, String uname, String umail, long contact) {
+	private String roles;
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy ="user")
+	private List<Purchase> purchase=new ArrayList<>();
+	
+	
+
+	public user(int uid, String username, String password, String roles, List<Purchase> purchase) {
 		super();
 		this.uid = uid;
-		this.uname = uname;
-		this.umail = umail;
-		this.contact = contact;
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+		this.purchase = purchase;
 	}
 	public user() {
 		super();
@@ -28,24 +43,41 @@ public class user {
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
-	public String getUname() {
-		return uname;
+	public String getUsername() {
+		return username;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getUmail() {
-		return umail;
+	public String getPassword() {
+		return password;
 	}
-	public void setUmail(String umail) {
-		this.umail = umail;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public long getContact() {
-		return contact;
-	}
-	public void setContact(long contact) {
-		this.contact = contact;
-	}
+
 	
 
+	public String getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+
+	public List<Purchase> getPurchase() {
+		return purchase;
+	}
+	public void setPurchase(List<Purchase> purchase) {
+		this.purchase = purchase;
+	}
+	@Override
+	public String toString() {
+		return "user [uid=" + uid + ", username=" + username + ", password=" + password + ", roles=" + roles
+				 + "]";
+	}
+	
 }
+	
+	
